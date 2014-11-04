@@ -14,6 +14,10 @@ But this serves my purpose for the moment.
 Right now, there is no way to remove a saved tabs from the list.  Will get to
 that someday.
 
+Download the extensions from the
+[Releases](https://github.com/venkytv/tabattic/releases)
+page.
+
 ##### Credits
 
 - Icon from [Pixabay](http://pixabay.com/en/suitcase-carrying-case-trunk-key-99246/)
