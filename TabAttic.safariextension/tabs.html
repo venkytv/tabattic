@@ -1,0 +1,52 @@
+<html><head>
+<title>TabAttic - Tab List</title>
+<script>
+
+function writeList() {
+	var body = document.getElementsByTagName("body")[0];
+	//var list = document.createElement("ul");
+	var list;
+	var numKeys = localStorage.length;
+
+	var keyList = new Array();
+	for (var i = 0; i < numKeys; i++) {
+		keyList[keyList.length] = localStorage.key(i);
+	}
+	keyList.sort().reverse();
+
+	var lastEpoch = 0;
+	for (var i = 0; i < numKeys; i++) {
+		var key = keyList[i];
+		var item = JSON.parse(localStorage.getItem(key));
+		var link = document.createElement('a');
+		link.setAttribute('href', item.url);
+		link.setAttribute('target', '_blank');
+
+		var epoch = parseInt(key.split('.')[0]);
+		if (epoch != lastEpoch) {
+			lastEpoch = epoch;
+			var ds = new Date(epoch);
+			if (list) {
+				body.appendChild(list);
+			}
+			body.appendChild(document.createTextNode(ds));
+			list = document.createElement('ul');
+		}
+		link.appendChild(document.createTextNode(item.title));
+
+		var listItem = document.createElement('li');
+		listItem.appendChild(link);
+
+		list.appendChild(listItem);
+	}
+	body.appendChild(list);
+}
+
+
+</script>
+</head>
+<body onload="writeList()">
+	<h2>TabAttic - Saved Tabs<h2>
+
+</body>
+</html>

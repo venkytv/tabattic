@@ -1,0 +1,51 @@
+<html><head>
+<script>
+
+var ignoreRE = /^https?:\/\/mail\.google\./;
+var extensionsRE = /^safari-extension:/;
+
+function performCommand(event) {
+	if (event.command == 'saveTabs') {
+		var epoch = Date.now();
+		var myTabs = safari.application.activeBrowserWindow.tabs;
+		var numTabs = myTabs.length;
+		var numClosed = 0;
+		for (var i = 0; i < numTabs; ++i) {
+			var url = myTabs[i].url;
+			if (!url || ignoreRE.test(url)) {
+				continue;
+			}
+				
+			if (!extensionsRE.test(url)) {
+				var title = myTabs[i].title;
+				var id = epoch + '.' + i;
+				var ser = JSON.stringify({
+					url: url,
+					title: title
+				});
+				localStorage.setItem(id, ser);
+			}
+
+			numClosed++;
+			if (numClosed >= numTabs) {
+				// Don't let the active window close
+				safari.application.activeBrowserWindow.openTab();
+			}
+			myTabs[i].close();
+		}
+	} else if (event.command = 'showTabs') {
+		showTabs();
+	}
+}
+
+function showTabs() {
+	var newTab = safari.application.activeBrowserWindow.openTab();
+	var newURL = safari.extension.baseURI + 'tabs.html';
+	newTab.url = newURL;
+	return newTab;
+}
+
+safari.application.addEventListener("command", performCommand, false);
+
+</script>
+</head></html>

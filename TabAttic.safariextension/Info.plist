@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Venky TV</string>
+	<key>Builder Version</key>
+	<string>10600.1.25</string>
+	<key>CFBundleDisplayName</key>
+	<string>TabAttic</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.duh-uh.tabattic</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Database Quota</key>
+		<real>5242880</real>
+		<key>Global Page</key>
+		<string>global.html</string>
+		<key>Menus</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>toolbarMenu</string>
+				<key>Menu Items</key>
+				<array>
+					<dict>
+						<key>Command</key>
+						<string>saveTabs</string>
+						<key>Identifier</key>
+						<string>saveTabsItem</string>
+						<key>Title</key>
+						<string>Save Tabs</string>
+					</dict>
+					<dict>
+						<key>Command</key>
+						<string>showTabs</string>
+						<key>Identifier</key>
+						<string>showSavedTabsItem</string>
+						<key>Title</key>
+						<string>Show Saved Tabs</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>menubutton</string>
+				<key>Image</key>
+				<string>suitcase.png</string>
+				<key>Label</key>
+				<string>TabAttic</string>
+				<key>Menu</key>
+				<string>toolbarMenu</string>
+				<key>Tool Tip</key>
+				<string>Save and close current tabs</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict/>
+	</dict>
+	<key>Description</key>
+	<string>Save all current tabs in a list and close them</string>
+	<key>DeveloperIdentifier</key>
+	<string>P5638ENSBM</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
