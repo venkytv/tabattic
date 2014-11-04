@@ -4,7 +4,7 @@ TabAttic
 ##### A bare-bones implementation of Chrome's OneTab extension for Safari
 
 Failed to find a Safari equivalent of Chrome's fantastic
-(OneTab)[http://www.one-tab.com] extension,
+[OneTab](http://www.one-tab.com) extension,
 decided to learn how Safari's extensions worked, and put this together.
 
 My JavaScript knowledge is almost nonexistent.  I'm sure this could have been
